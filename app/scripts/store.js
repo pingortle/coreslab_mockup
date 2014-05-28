@@ -1,0 +1,1 @@
+CoreslabMockup.ApplicationAdapter = DS.FixtureAdapter;
