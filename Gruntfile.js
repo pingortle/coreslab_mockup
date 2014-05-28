@@ -26,6 +26,20 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         yeoman: yeomanConfig,
+        divshot: {
+            server: {
+                options: {
+                    port: 9000,
+                    hostname: 'localhost',
+                    root: '<%= yeoman.dist %>',
+                    clean_urls: true,
+                    routes: {
+                        '**/*.html': 'index.html'
+                    },
+                    cache_control: {},
+                },
+            },
+        },
         watch: {
             emberTemplates: {
                 files: '<%= yeoman.app %>/templates/**/*.hbs',
@@ -129,8 +143,8 @@ module.exports = function (grunt) {
         compass: {
             options: {
                 sassDir: '<%= yeoman.app %>/styles',
-                cssDir: '.tmp/styles',
-                generatedImagesDir: '.tmp/images/generated',
+                cssDir: '<%= yeoman.dist %>/styles',
+                generatedImagesDir: '<%= yeoman.dist %>/images/generated',
                 imagesDir: '<%= yeoman.app %>/images',
                 javascriptsDir: '<%= yeoman.app %>/scripts',
                 fontsDir: '<%= yeoman.app %>/styles/fonts',
@@ -267,9 +281,10 @@ module.exports = function (grunt) {
                         flatten: true,
                         filter: 'isFile',
                         cwd: '<%= yeoman.app %>/bower_components/',
-                        dest: '<%= yeoman.app %>/styles/fonts/',
+                        dest: '<%= yeoman.dist %>/styles/fonts/',
                         src: [ 
-                            'bootstrap-sass/dist/fonts/**', // Bootstrap
+                            'bootstrap-sass/dist/fonts/**', // Bootstrap Sass
+                            'bootstrap/dist/fonts/**', // Bootstrap Vanilla
                             'font-awesome/fonts/**' // Font-Awesome
                         ]
                     }
@@ -351,7 +366,7 @@ module.exports = function (grunt) {
             'concurrent:server',
             'neuter:app',
             'copy:fonts',
-            'connect:livereload',
+            'divshot:server',
             'open',
             'watch'
         ]);
