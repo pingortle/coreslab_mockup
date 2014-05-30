@@ -1,3 +1,8 @@
 CoreslabMockup.Router.map(function () {
-  // Add your routes here
+  this.resource('workareas', function(){
+    this.resource('workarea', { path: '/:workarea_id' }, function(){
+      this.route('edit');
+    });
+    this.route('create');
+  });
 });
