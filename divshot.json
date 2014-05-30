@@ -1,6 +1,6 @@
 {
-  "name": "coreslabmockup",
-  "root": "./",
+  "name": "coreslab-mockup",
+  "root": "dist",
   "clean_urls": true,
   "cache_control": {},
   "routes": {}
