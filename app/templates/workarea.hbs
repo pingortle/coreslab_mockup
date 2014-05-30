@@ -1,16 +1,26 @@
 <h1>WorkArea</h1>
 
 <table>
-  {{#each model.attributes}}
   <tr>
     <td>
-      <strong>{{this.key}}:</strong>
+      <strong>Name:</strong>
     </td>
     <td>
-      {{this.value}}
+      {{model.name}}
     </td>
   </tr>
-  {{/each}}
+  <tr>
+    <td>
+      <strong>Subareas:</strong>
+    </td>
+    <td>
+      <ul>
+        {{#each model.subareas}}
+          <li>{{this.name}}</li>
+        {{/each}}
+      </ul>
+    </td>
+  </tr>
 </table>
 
 {{#link-to 'workarea.edit' model}}Change{{/link-to}}
