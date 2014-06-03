@@ -1,12 +1,12 @@
-<h1>WorkArea</h1>
+<h1>{{model.name}}</h1>
 
 <table>
   <tr>
     <td>
-      <strong>Name:</strong>
+      <strong>Is Toplevel?: </strong>
     </td>
     <td>
-      {{model.name}}
+      {{model.isToplevel}}
     </td>
   </tr>
   <tr>
@@ -16,7 +16,7 @@
     <td>
       <ul>
         {{#each model.subareas}}
-          <li>{{this.name}}</li>
+          <li>{{#link-to 'workarea' this}}{{this.name}}{{/link-to}}</li>
         {{/each}}
       </ul>
     </td>

@@ -4,7 +4,7 @@ CoreslabMockup.Workarea = DS.Model.extend({
 
     subareas: DS.hasMany('workarea'),
 
-    parent: DS.belongsTo('workarea'),
+    isToplevel: DS.attr('boolean', { defaultValue: true }),
 });
 
 // probably should be mixed-in...
@@ -12,30 +12,87 @@ CoreslabMockup.Workarea.reopen({
   attributes: function(){
     var model = this;
     return Ember.keys(this.get('data')).map(function(key){
-      return Em.Object.create({ model: model, key: key, valueBinding: 'model.' + key });
+      return Ember.Object.create({ model: model, key: key, valueBinding: 'model.' + key });
     });
   }.property()
 });
 
-// delete below here if you do not want fixtures
 CoreslabMockup.Workarea.FIXTURES = [
-  
+
   {
     id: 0,
-    
-    name: 'foo',
-    
-    subareas: [0,],
-    
+
+    name: 'Production',
+
+    subareas: [],
+
   },
-  
+
   {
     id: 1,
-    
-    name: 'foo',
-    
+
+    name: 'Admin',
+
+    subareas: [7, 8,],
+  },
+
+  {
+    id: 2,
+
+    name: 'Scheduling',
+
     subareas: [],
-    
-  }
-  
+  },
+
+  {
+    id: 3,
+
+    name: 'QC',
+
+    subareas: [],
+  },
+
+  {
+    id: 4,
+
+    name: 'Shipping/Erection',
+
+    subareas: [],
+  },
+
+  {
+    id: 5,
+
+    name: 'D&E',
+
+    subareas: [],
+  },
+
+  {
+    id: 6,
+
+    name: 'Finance',
+
+    subareas: [],
+  },
+
+  {
+    id: 7,
+
+    name: 'Settings',
+
+    subareas: [],
+
+    isToplevel: false,
+  },
+
+  {
+    id: 8,
+
+    name: 'Personnel',
+
+    subareas: [],
+
+    isToplevel: false,
+  },
 ];

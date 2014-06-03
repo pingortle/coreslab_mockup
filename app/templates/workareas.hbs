@@ -1,8 +1,12 @@
-<h1>WorkAreas</h1>
-
-<ul>
+<ul class="nav nav-tabs">
  {{#each model}}
- <li>{{#link-to 'workarea' this}}{{this.id}}{{/link-to}}</li>
+	{{#if this.isToplevel}}
+		{{#link-bootstrap}}
+			{{#link-to 'workarea' this tagName='li'}}
+				{{#link-to 'workarea' this bubbles=false}}{{this.name}}{{/link-to}}
+			{{/link-to}}
+		{{/link-bootstrap}}
+	{{/if}}
   {{/each}}
 </ul>
 
