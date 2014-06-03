@@ -359,6 +359,9 @@ module.exports = function (grunt) {
         if (target === 'dist') {
             return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
         }
+        if (target === 'debug') {
+            return grunt.task.run(['build:debug', 'open', 'connect:dist:keepalive']);
+        }
 
         grunt.task.run([
             'clean:server',
@@ -381,19 +384,36 @@ module.exports = function (grunt) {
         'mocha'
     ]);
 
-    grunt.registerTask('build', [
-        'clean:dist',
-        'replace:dist',
-        'useminPrepare',
-        'concurrent:dist',
-        'neuter:app',
-        'concat',
-        'cssmin',
-        'uglify',
-        'copy',
-        'rev',
-        'usemin'
-    ]);
+    grunt.registerTask('build',function (target) {
+        if (target === 'debug') {
+            return grunt.task.run([
+                'clean:dist',
+                'replace:app',
+                'useminPrepare',
+                'concurrent:dist',
+                'neuter:app',
+                'concat',
+                'cssmin',
+                'copy',
+                'rev',
+                'usemin'
+                ]);
+        }
+
+        grunt.task.run([
+            'clean:dist',
+            'replace:dist',
+            'useminPrepare',
+            'concurrent:dist',
+            'neuter:app',
+            'concat',
+            'cssmin',
+            'uglify',
+            'copy',
+            'rev',
+            'usemin'
+            ]);
+    });
 
     grunt.registerTask('default', [
         'jshint',
