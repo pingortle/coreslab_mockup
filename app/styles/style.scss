@@ -9,8 +9,16 @@ html, body {
 div.coreslab-logo {
 	background-image: url(/images/coreslab_logo.png);
 	background-repeat: no-repeat;
-	width: 241px;
-	height: 50px;
+	background-size:contain;
+	background-position:center;
+	.big {
+		width: 240px;
+		height: 50px;
+	}
+	.small {
+		width: 192px;
+		height: 40px;
+	}
 	margin: 0;
 }
 
