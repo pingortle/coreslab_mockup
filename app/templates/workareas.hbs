@@ -1,10 +1,8 @@
-<ul class="nav nav-tabs">
+<ul class="nav nav-tabs nav-justified">
  {{#each model}}
 	{{#if this.isToplevel}}
 		{{#link-bootstrap}}
-			{{#link-to 'workarea' this tagName='li'}}
-				{{#link-to 'workarea' this bubbles=false}}{{this.name}}{{/link-to}}
-			{{/link-to}}
+			{{#link-to 'workarea' this}}{{this.name}}{{/link-to}}
 		{{/link-bootstrap}}
 	{{/if}}
   {{/each}}
