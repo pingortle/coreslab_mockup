@@ -360,7 +360,7 @@ module.exports = function (grunt) {
             return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
         }
         if (target === 'debug') {
-            return grunt.task.run(['build:debug', 'open', 'connect:dist:keepalive']);
+            return grunt.task.run(['build:debug', 'open', 'divshot:server', 'watch']);
         }
 
         grunt.task.run([
