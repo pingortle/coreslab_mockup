@@ -1,17 +1,14 @@
 <div class="row">
     <div>
-        <div class="col-md-3">
+        <div class="col-md-12">
             <div class="well sidebar-nav">
                 <strong>Workflows</strong>
-                <ul class="list-group">
+                <div class="list-group">
                 {{#each item in controller}}
-                    <li class="list-group-item">{{#link-to 'workarea' item}}{{item.name}}{{/link-to}}</li>
+                    {{#link-to 'workarea' item class="list-group-item text-center"}}{{item.name}}{{/link-to}}
                 {{/each}}
-                </ul>
+                </div>
             </div>
-        </div>
-        <div class="col-md-9">
-            {{outlet}}
         </div>
     </div>
 </div>
