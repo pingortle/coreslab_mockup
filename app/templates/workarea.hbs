@@ -1,28 +1,5 @@
 <h1>{{model.name}}</h1>
 
-<table>
-  <tr>
-    <td>
-      <strong>Is Toplevel?: </strong>
-    </td>
-    <td>
-      {{model.isToplevel}}
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <strong>Subareas:</strong>
-    </td>
-    <td>
-      <ul>
-        {{#each model.subareas}}
-          <li>{{#link-to 'workarea' this}}{{this.name}}{{/link-to}}</li>
-        {{/each}}
-      </ul>
-    </td>
-  </tr>
-</table>
-
-{{#link-to 'workarea.edit' model}}Change{{/link-to}}
+{{view view.nestedViewType}}
 
 {{outlet}}
