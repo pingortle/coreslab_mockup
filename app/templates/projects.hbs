@@ -1,0 +1,20 @@
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Project ID</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		{{#each controller}}
+			{{#link-to 'project' this tagName="tr"}}
+				<td>{{this.id}}</td>
+				<td>{{this.description}}</td>
+			{{/link-to}}
+		{{/each}}
+	</tbody>
+</table>
+
+<div class="panel">
+	{{outlet}}
+</div>

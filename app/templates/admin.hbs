@@ -1,10 +1,14 @@
-<div class="panel panel-default">
+<div class="well col-md-3">
 	<div class="panel-body">
+		<strong>Start Here</strong>
 		<div class="btn-group-vertical btn-group-lg">
 			<button type="button" class="btn btn-default">Create a new project...</button>
 			<button type="button" class="btn btn-default">Send an email...</button>
-			<button type="button" class="btn btn-default">Browse projects...</button>
+			 {{#link-to "projects" class="btn btn-default"}}Browse projects...{{/link-to}}
 			<button type="button" class="btn btn-default">Bulk modifications...</button>
 		</div>
 	</div>
+</div>
+<div class="col-md-9">
+	{{outlet}}
 </div>
