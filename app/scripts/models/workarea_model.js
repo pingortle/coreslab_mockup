@@ -20,7 +20,7 @@ CoreslabMockup.Workarea.reopen({
 CoreslabMockup.Workarea.FIXTURES = [
 
   {
-    id: 0,
+    id: 'production',
 
     name: 'Production',
 
@@ -29,15 +29,15 @@ CoreslabMockup.Workarea.FIXTURES = [
   },
 
   {
-    id: 1,
+    id: 'admin',
 
     name: 'Admin',
 
-    subareas: [7, 8,],
+    subareas: ['settings', 'personnel',],
   },
 
   {
-    id: 2,
+    id: 'scheduling',
 
     name: 'Scheduling',
 
@@ -45,7 +45,7 @@ CoreslabMockup.Workarea.FIXTURES = [
   },
 
   {
-    id: 3,
+    id: 'qc',
 
     name: 'QC',
 
@@ -53,7 +53,7 @@ CoreslabMockup.Workarea.FIXTURES = [
   },
 
   {
-    id: 4,
+    id: 'shipping-and-erection',
 
     name: 'Shipping/Erection',
 
@@ -61,7 +61,7 @@ CoreslabMockup.Workarea.FIXTURES = [
   },
 
   {
-    id: 5,
+    id: 'drafting-and-engineering',
 
     name: 'D&E',
 
@@ -69,7 +69,7 @@ CoreslabMockup.Workarea.FIXTURES = [
   },
 
   {
-    id: 6,
+    id: 'finance',
 
     name: 'Finance',
 
@@ -77,7 +77,7 @@ CoreslabMockup.Workarea.FIXTURES = [
   },
 
   {
-    id: 7,
+    id: 'settings',
 
     name: 'Settings',
 
@@ -87,7 +87,7 @@ CoreslabMockup.Workarea.FIXTURES = [
   },
 
   {
-    id: 8,
+    id: 'personnel',
 
     name: 'Personnel',
 
