@@ -1,20 +1,10 @@
 /*global Ember*/
-CoreslabMockup.Workarea = DS.Model.extend({
+CoreslabMockup.Workarea = DS.Model.extend(CoreslabMockup.Attributes, {
     name: DS.attr('string'),
 
     subareas: DS.hasMany('workarea'),
 
     isToplevel: DS.attr('boolean', { defaultValue: true }),
-});
-
-// probably should be mixed-in...
-CoreslabMockup.Workarea.reopen({
-  attributes: function(){
-    var model = this;
-    return Ember.keys(this.get('data')).map(function(key){
-      return Ember.Object.create({ model: model, key: key, valueBinding: 'model.' + key });
-    });
-  }.property()
 });
 
 CoreslabMockup.Workarea.FIXTURES = [
