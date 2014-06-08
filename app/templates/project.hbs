@@ -1,4 +1,7 @@
-<h2>{{model.description}} <small>{{model.id}}</small></h2>
-{{#if model.customer.name}}
-	<h3>For: {{model.customer.name}}</h3>
-{{/if}}
+
+{{#with model}}
+	<h2>{{description}} <small>{{id}}</small></h2>
+	{{#if customer.name}}
+		<h3>For: {{customer.name}}</h3>
+	{{/if}}
+{{/with}}

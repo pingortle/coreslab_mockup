@@ -26,3 +26,38 @@ div.coreslab-logo {
 	margin: 0;
 	padding: 2px 16px 2px 16px;
 }
+
+@mixin hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+@mixin show {
+	display: inline !important;
+}
+
+:not(.collapsed) {
+	>.table-shown {
+		@include show;
+	}
+
+	>.table-collapsed {
+		@include hidden;
+	}
+}
+
+.collapsed {
+	>.table-shown {
+		@include hidden;
+	}
+	>.table-collapsed {
+		@include show;
+	}
+}
+
+@media (min-width: $screen-md-min) {
+	div.table-collapse.collapse.table-sidebar {
+		height: auto;
+		display: block;
+	}
+}
