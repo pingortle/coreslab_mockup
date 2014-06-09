@@ -1,7 +1,18 @@
 $icon-font-path: "../styles/fonts/"; // Change the path to the fonts
 @import "bootstrap-sass/lib/bootstrap";
 
-/* Put your CSS here */
+$screen-xxs-max:	240px !default;
+$screen-xs-min:		241px !default;
+
+@include responsive-invisibility('.visible-xxs');
+@media (max-width: $screen-xxs-max) {
+  @include responsive-visibility('.visible-xxs');
+}
+
+@media (min-width: $screen-xs-min) and (max-width: $screen-xs-max) {
+  @include responsive-visibility('.visible-md.visible-sm');
+}
+
 html, body {
     margin: 0;
 }
@@ -11,20 +22,26 @@ div.coreslab-logo {
 	background-repeat: no-repeat;
 	background-size:contain;
 	background-position:center;
-	.big {
+	>.big {
 		width: 240px;
 		height: 50px;
 	}
-	.small {
+	>.small {
 		width: 192px;
 		height: 40px;
+
 	}
+	>.tiny {
+		width: 160px;
+		height: 33.2px;
+	}
+
 	margin: 0;
 }
 
 .navbar-brand {
 	margin: 0;
-	padding: 2px 16px 2px 16px;
+	padding: 2px 8px;
 }
 
 @mixin hidden {
