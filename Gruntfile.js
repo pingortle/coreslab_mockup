@@ -30,7 +30,7 @@ module.exports = function (grunt) {
             server: {
                 options: {
                     port: 9000,
-                    hostname: 'localhost',
+                    hostname: '0.0.0.0',
                     root: '<%= yeoman.dist %>',
                     clean_urls: true,
                     routes: {
@@ -69,7 +69,7 @@ module.exports = function (grunt) {
             options: {
                 port: 9000,
                 // change this to '0.0.0.0' to access the server from outside
-                hostname: 'localhost'
+                hostname: '0.0.0.0'
             },
             livereload: {
                 options: {
