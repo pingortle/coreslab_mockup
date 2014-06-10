@@ -299,6 +299,7 @@ module.exports = function (grunt) {
                         dest: '<%= yeoman.dist %>',
                         src: [
                             '*.{ico,txt}',
+                            'apple-touch-icon*.png',
                             '.htaccess',
                             'images/{,*/}*.{webp,gif}',
                             'styles/fonts/*'
