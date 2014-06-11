@@ -59,6 +59,20 @@ div.coreslab-logo {
 	cursor: pointer;
 }
 
+div.table-sidebar {
+	table {
+		table-layout: fixed;
+
+		td {
+			@include text-overflow;
+		}
+
+		th:first-of-type {
+			width: 6em;
+		}
+	}
+}
+
 @media (min-width: $screen-md-min) {
 	div.table-collapse.collapse.table-sidebar {
 		height: auto;
