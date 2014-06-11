@@ -55,6 +55,10 @@ div.coreslab-logo {
 	}
 }
 
+.ios-clickable-shim {
+	cursor: pointer;
+}
+
 @media (min-width: $screen-md-min) {
 	div.table-collapse.collapse.table-sidebar {
 		height: auto;

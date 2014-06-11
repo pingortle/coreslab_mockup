@@ -6,3 +6,7 @@ CoreslabMockup.Attributes = Ember.Mixin.create({
     });
   }.property()
 });
+
+Ember.LinkView.reopen({
+	classNames: ['ios-clickable-shim'],
+});
