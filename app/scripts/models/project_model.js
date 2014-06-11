@@ -5,6 +5,10 @@ CoreslabMockup.Project = DS.Model.extend(CoreslabMockup.Attributes, {
 
 CoreslabMockup.Project.FIXTURES = [
 	{
+		id: "010.017",
+		description: "Southwest PowerPool Ops Center/Parking Garage",
+	},
+	{
 		id: "012.002",
 		description: "Valley View Gym",
 		customer: null,
