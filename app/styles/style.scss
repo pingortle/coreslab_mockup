@@ -71,6 +71,10 @@ div.table-sidebar {
 	}
 }
 
+.panel-header .project-description {
+	display: inline-block;
+}
+
 @media (min-width: $screen-md-min) {
 	div.table-collapse.collapse.table-sidebar {
 		height: auto;

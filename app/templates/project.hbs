@@ -1,7 +1,20 @@
-
+<div class="panel">
 {{#with model}}
-	<h2>{{description}} <small>{{id}}</small></h2>
-	{{#if customer.name}}
-		<h3>For: {{customer.name}}</h3>
-	{{/if}}
+	<div class="panel-header">
+		<h2>{{id}} <small class="project-description">{{description}}</small></h2>
+	</div>
+	<div class="panel-body">
+		<dl class="dl-horizontal">
+			{{#if customer.name}}
+			<dt>Customer:</dt><dd>{{customer.name}}</dd>
+			{{/if}}
+			<dt>Status:</dt><dd>Sold</dd>
+			<dt>Job Type:</dt><dd>Architecture</dd>
+			<dt>Subtype:<dt><dd></dd>
+			<dt>GEAC Number:</dt><dd>XXXX</dd>
+			<dt>Date Entered:</dt><dd>mm/dd/yy</dd>
+			<dt>Date Completed:</dt><dd>??/??/??</dd>
+		</dl>
+	</div>
 {{/with}}
+</div>

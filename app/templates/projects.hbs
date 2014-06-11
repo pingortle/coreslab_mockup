@@ -1,29 +1,29 @@
-<div class="col-md-4">
-	<div class="table-sidebar table-collapse in">
-		<table class="table">
-			<thead>
-				<tr>
-					<th>Project ID</th>
-					<th>Description</th>
-				</tr>
-			</thead>
-			<tbody>
-				{{#each controller}}
-					{{#link-to 'project' this tagName="tr"}}
-						<td>{{this.id}}</td>
-						<td>{{this.description}}</td>
-					{{/link-to}}
-				{{/each}}
-			</tbody>
-		</table>
+<div class="row">
+	<div class="col-md-4">
+		<div class="table-sidebar table-collapse in">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Project ID</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#each controller}}
+						{{#link-to 'project' this tagName="tr"}}
+							<td>{{this.id}}</td>
+							<td>{{this.description}}</td>
+						{{/link-to}}
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+		<button type="button" class="btn btn-default btn-block visible-xs visible-sm" data-toggle="collapse" data-target=".table-collapse">
+		<span class="table-shown">Hide</span><span class="table-collapsed">Show</span> Projects
+		</button>
 	</div>
-	<button type="button" class="btn btn-default btn-block visible-xs visible-sm" data-toggle="collapse" data-target=".table-collapse">
-	<span class="table-shown">Hide</span><span class="table-collapsed">Show</span> Projects
-	</button>
-</div>
 
-<div class="col-md-8">
-	<div class="panel">
+	<div class="col-md-8">
 		{{outlet}}
 	</div>
 </div>
