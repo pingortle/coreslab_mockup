@@ -1,5 +1,10 @@
 CoreslabMockup.Customer = DS.Model.extend(CoreslabMockup.Attributes, {
 	name: DS.attr(),
+	address: DS.attr(),
+	phone: DS.attr(),
+	fax: DS.attr(),
+	notes: DS.attr(),
+
 	projects: DS.hasMany('project'),
 });
 

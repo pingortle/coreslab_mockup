@@ -10,5 +10,9 @@ CoreslabMockup.Router.map(function () {
     this.resource('project', { path:'/:project_id' });
   });
 
+  this.resource('customers'), function() {
+    this.resource('customer', { path:'/:customer_id' });
+  }
+
   this.route('settings');
 });
