@@ -1,0 +1,8 @@
+<div class="hidden-print">
+	<div id="hideable-sidebar" class="collapse in">
+		{{yield}}
+	</div>
+	<button type="button" class="btn btn-default btn-block visible-xs visible-sm" data-toggle="collapse" data-target="#hideable-sidebar">
+	<span class="sidebar-shown">{{hide-text}}</span><span class="sidebar-collapsed">{{show-text}}</span> {{button-text}}
+	</button>
+</div>

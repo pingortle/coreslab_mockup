@@ -1,0 +1,29 @@
+@import "bootstrap-sass/lib/bootstrap"
+
+@mixin hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+@mixin show {
+	display: inline !important;
+}
+
+:not(.collapsed) {
+	>.sidebar-shown {
+		@include show;
+	}
+
+	>.sidebar-collapsed {
+		@include hidden;
+	}
+}
+
+.collapsed {
+	>.sidebar-shown {
+		@include hidden;
+	}
+	>.sidebar-collapsed {
+		@include show;
+	}
+}
